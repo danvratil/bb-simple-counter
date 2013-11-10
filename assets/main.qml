@@ -20,80 +20,101 @@
 import bb.cascades 1.0
 import bb.system 1.0
 
-Page {
+NavigationPane {
     id: root;
 
     property int count: 0;
-    
-    actions: [
-        ActionItem {
-            id: resetAction;
-            title: qsTr("Reset counter");
-            imageSource: "asset:///icons/ic_clear.png";
-    
-            ActionBar.placement: ActionBarPlacement.InOverflow;
-            
-            onTriggered: {
-                confirmDialog.exec();
-                if (confirmDialog.result === SystemUiResult.ConfirmButtonSelection) {
-                   root.count = 0;
-                }
-            }
-        },
-        
-        ActionItem {
-            id: decrementAction;
-            title: qsTr("Decrement");
-            imageSource: "asset:///icons/ic_remove.png";
-          
-            ActionBar.placement: ActionBarPlacement.InOverflow;
+
+    Menu.definition: MenuDefinition {
+        helpAction: HelpActionItem {
+            id: helpAction;
+            title: qsTr("About");
 
             onTriggered: {
-                root.count--;
+                var page = aboutPage.createObject();
+                root.push(page);
             }
         }
-    ]
+    }
 
-    Container {
-        layout: DockLayout {}
+    Page {
+        actions: [
+            ActionItem {
+                id: resetAction;
+                title: qsTr("Reset counter");
+                imageSource: "asset:///icons/ic_clear.png";
 
-        gestureHandlers: [
-            TapHandler {
-                onTapped: {
-                    root.count++;
+                ActionBar.placement: ActionBarPlacement.InOverflow;
+
+                onTriggered: {
+                    confirmDialog.exec();
+                    if (confirmDialog.result === SystemUiResult.ConfirmButtonSelection) {
+                        root.count = 0;
+                    }
+                }
+            },
+
+            ActionItem {
+                id: decrementAction;
+                title: qsTr("Decrement");
+                imageSource: "asset:///icons/ic_remove.png";
+
+                ActionBar.placement: ActionBarPlacement.InOverflow;
+
+                onTriggered: {
+                    root.count--;
                 }
             }
         ]
 
-        Label {
-            id: button;
+        Container {
+            layout: DockLayout {}
 
-            horizontalAlignment: HorizontalAlignment.Center;
-            verticalAlignment: VerticalAlignment.Center;
+            gestureHandlers: [
+                TapHandler {
+                    onTapped: {
+                        root.count++;
+                    }
+                }
+            ]
 
-            textStyle.fontSize: FontSize.PointValue;
-            textStyle.fontSizeValue: 50;
-            textStyle.textAlign: TextAlign.Center;
+            Label {
+                id: button;
 
-            text: root.count;
+                horizontalAlignment: HorizontalAlignment.Center;
+                verticalAlignment: VerticalAlignment.Center;
+
+                textStyle.fontSize: FontSize.PointValue;
+                textStyle.fontSizeValue: 50;
+                textStyle.textAlign: TextAlign.Center;
+
+                text: root.count;
+            }
+
+            attachedObjects: [
+                LayoutUpdateHandler {
+                    id: layout;
+                }
+            ]
         }
 
         attachedObjects: [
-            LayoutUpdateHandler {
-                id: layout;
+            SystemDialog {
+                id: confirmDialog;
+                title: qsTr("Confirm reset");
+
+                body: qsTr("Are you sure you want to reset the counter?");
+
+                confirmButton.label: qsTr("Reset counter");
+                cancelButton.label: qsTr("Cancel");
             }
-        ] 
+        ]
     }
-    
+
     attachedObjects: [
-        SystemDialog {
-            id: confirmDialog;
-            title: qsTr("Confirm reset");
-
-            body: qsTr("Are you sure you want to reset the counter?");
-
-            confirmButton.label: qsTr("Reset counter");
-            cancelButton.label: qsTr("Cancel");
+        ComponentDefinition {
+            id: aboutPage;
+            source: "asset:///about.qml";
         }
     ]
 }
