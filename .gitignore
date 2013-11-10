@@ -1,0 +1,10 @@
+arm
+x86
+config.pri
+precompiled.h
+
+.cproject
+.project
+.settings
+
+*.qm
