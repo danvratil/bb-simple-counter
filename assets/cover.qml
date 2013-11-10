@@ -20,6 +20,7 @@
 import bb.cascades 1.0
 
 Container {
+    id: root;
     
     property int count: 0;
 
@@ -37,6 +38,7 @@ Container {
         text: count;
 
         textStyle.fontSize: FontSize.PointValue;
-        textStyle.fontSizeValue: 40;
+        textStyle.fontSizeValue: (root.count < 100) ? 40 :
+                                 (root.count < 1000) ? 35 : 30;
     }
 }
