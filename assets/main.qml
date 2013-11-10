@@ -33,11 +33,10 @@ Page {
             ActionBar.placement: ActionBarPlacement.InOverflow;
 
             onTriggered: {
-                var result = confirmDialog.exec();
-                console.log(result);
-                //if (confirmDialog.exec() === SystemUiResult.ConfirmButtonSelection) {
-//                    root.count = 0;
-  //              }
+                confirmDialog.exec();
+                if (confirmDialog.result === SystemUiResult.ConfirmButtonSelection) {
+                   root.count = 0;
+                }
             }
         },
         
