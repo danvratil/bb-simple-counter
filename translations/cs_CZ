@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="cs_CZ">
+<context>
+    <name>about</name>
+    <message>
+        <location filename="../assets/about.qml" line="45"/>
+        <source>&amp;copy; 2013 by Daniel Vrátil&lt;br /&gt;&lt;a href=&quot;mailto:dan@progdan.cz&quot;&gt;dan@progdan.cz&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.progdan.cz&quot;&gt;www.progdan.cz&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;This application is available under the GNU General Public License (GPL). You can report issues, check out the source code, submit patches and browse my other projects on &lt;a href=&quot;https://github.com/danvratil/&quot;&gt;github.com/danvratil&lt;/a&gt;.</source>
+        <translation>&amp;copy; 2013 Daniel Vrátil&lt;br /&gt;&lt;a href=&quot;mailto:dan@progdan.cz&quot;&gt;dan@progdan.cz&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.progdan.cz&quot;&gt;www.progdan.cz&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Tato aplikace je dostupná pod GNU General Public License (GPL). Zdrojový kód této aplikace i moje další projekty najdete na &lt;a href=&quot;https://github.com/danvratil/&quot;&gt;github.com/danvratil&lt;/a&gt;, kde také můžete hlasit chyby nebo posílat patche.</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="../assets/main.qml" line="31"/>
+        <source>About</source>
+        <translation>O Aplikaci</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="44"/>
+        <location filename="../assets/main.qml" line="109"/>
+        <source>Reset counter</source>
+        <translation>Vynulovat počítadlo</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="59"/>
+        <source>Decrement</source>
+        <translation>Odečíst</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="105"/>
+        <source>Confirm reset</source>
+        <translation>Potvrzení vynulovaní</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="107"/>
+        <source>Are you sure you want to reset the counter?</source>
+        <translation>Opravdu chcete vynulovat počítadlo?</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="110"/>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
+    </message>
+</context>
+</TS>
