@@ -29,9 +29,10 @@ Page {
         ActionItem {
             id: resetAction;
             title: qsTr("Reset counter");
+            imageSource: "asset:///icons/ic_clear.png";
     
             ActionBar.placement: ActionBarPlacement.InOverflow;
-
+            
             onTriggered: {
                 confirmDialog.exec();
                 if (confirmDialog.result === SystemUiResult.ConfirmButtonSelection) {
@@ -43,6 +44,7 @@ Page {
         ActionItem {
             id: decrementAction;
             title: qsTr("Decrement");
+            imageSource: "asset:///icons/ic_remove.png";
           
             ActionBar.placement: ActionBarPlacement.InOverflow;
 
