@@ -23,6 +23,11 @@ Container {
     
     property int count: 0;
 
+    // FIXME: This does not work for some reason and the background
+    // is white by default, so we hardcode black instead
+    //background: SystemDefaults.Paints.ContainerBackground;
+    background: Color.Black;
+
     layout: DockLayout {}
 
     Label {
