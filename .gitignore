@@ -1,10 +1,12 @@
-arm
-x86
+arm/
+x86/
 config.pri
 precompiled.h
 
+.assets.index
+
 .cproject
 .project
-.settings
+.settings/
 
 *.qm
