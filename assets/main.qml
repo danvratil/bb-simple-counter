@@ -58,6 +58,7 @@ NavigationPane {
                 id: decrementAction;
                 title: qsTr("Decrement");
                 imageSource: "asset:///icons/ic_remove.png";
+                enabled: root.count > 0;
 
                 ActionBar.placement: ActionBarPlacement.InOverflow;
 
